@@ -9,23 +9,13 @@ import org.springframework.hateoas.RepresentationModel;
 @Getter
 @ToString
 @Builder
-public class UsersDTO extends RepresentationModel<UsersDTO> {
-
+public class UsersDTO {
 
     private Long id;
-
-
     private String userId;
-
-
     private String firstName;
-
-
     private String lastName;
-
-
     private String email;
-
-
+    private String password;
     private String encryptedPassword;
 }
