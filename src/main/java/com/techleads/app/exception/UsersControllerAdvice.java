@@ -29,7 +29,7 @@ public class UsersControllerAdvice {
         return new ResponseEntity<>(standardError, HttpStatus.BAD_REQUEST);
     }
     @ExceptionHandler(value = {MethodArgumentNotValidException.class})
-    public ResponseEntity<StandardError> handleConstraintViolationException(MethodArgumentNotValidException ex, HttpServletRequest  request) {
+    public ResponseEntity<StandardError> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpServletRequest  request) {
 
         List<FieldErrorVM> fieldErrors = ex.getBindingResult().getFieldErrors().stream()
                 .map(fieldError -> new FieldErrorVM(fieldError.getDefaultMessage(), fieldError.getField(), String.valueOf(fieldError.getRejectedValue())))
